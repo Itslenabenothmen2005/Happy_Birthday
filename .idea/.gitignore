@@ -1,0 +1,10 @@
+# fichier : .gitignore (à la racine du projet)
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
