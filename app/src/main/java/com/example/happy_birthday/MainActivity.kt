@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.happy_birthday.ui.theme.Happy_BirthdayTheme
+import androidx.compose.foundation.layout.Row
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,17 +56,16 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        Text(
-            text = from,
-            fontSize = 36.sp
-        )
-
+    Row(modifier = modifier) {
         Text(
             text = message,
             fontSize = 100.sp,
-            lineHeight = 100.sp,
-            color = Color.Black
+            lineHeight = 116.sp,
+        )
+
+        Text(
+            text = from,
+            fontSize = 36.sp
         )
     }
 }
