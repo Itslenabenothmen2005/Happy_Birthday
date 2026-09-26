@@ -39,14 +39,13 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        // Petit texte gris (l'étiquette)
+
                         Text(
                             text = "BirthdayCardPreview",
                             fontSize = 14.sp,
                             color = Color.Gray
                         )
-                        // Grand texte
-                        BirthdayCard(name = "James")
+                        GreetingText(message = "Happy Birthday Sam!")
                     }
                 }
             }
@@ -54,22 +53,20 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun BirthdayCard(
-    name: String,
-    modifier: Modifier = Modifier
-) {
-    Text(
-        text = "Hello $name!",
-        fontSize = 36.sp,
-        modifier = modifier
-    )
-}
+
 
 @Preview(showBackground = true)
 @Composable
 fun BirthdayCardPreview() {
     Happy_BirthdayTheme {
-        BirthdayCard("James")
+        GreetingText(message = "Happy Birthday Sam!")
     }
+}
+
+@Composable
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
+    Text(
+        text = message,
+        modifier = modifier
+    )
 }
