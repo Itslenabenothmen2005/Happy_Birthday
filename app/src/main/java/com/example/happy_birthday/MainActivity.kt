@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -17,8 +17,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.happy_birthday.ui.theme.Happy_BirthdayTheme
-import androidx.compose.foundation.layout.Box
-
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +44,7 @@ class MainActivity : ComponentActivity() {
                                 fontSize = 14.sp,
                                 color = Color.Gray
                             )
-                            GreetingText(message = "Happy Birthday James!")
+                            GreetingText(message = "Happy Birthday Sam!")
                         }
                     }
                 }
@@ -59,7 +57,8 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(message: String, modifier: Modifier = Modifier) {
     Text(
         text = message,
-        fontSize = 36.sp,
+        fontSize = 100.sp,
+        lineHeight= 116.sp,
         modifier = modifier
     )
 }
