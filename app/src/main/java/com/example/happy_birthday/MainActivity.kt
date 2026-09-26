@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
-//pour les mettre en méme niveau
+
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                                 fontSize = 14.sp,
                                 color = Color.Gray
                             )
-                            GreetingText(message = "Happy Birthday Sam!")
+                            GreetingText(message = "Happy Birthday Sam!", from = "From Emma")
                         }
                     }
                 }
@@ -54,20 +54,29 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GreetingText(message: String, modifier: Modifier = Modifier) {
-    Text(
-        text = message,
-        fontSize = 120.sp,
-        lineHeight= 116.sp,
-        color= Color.White,
-        modifier = modifier
-    )
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Text(
+            text = from,
+            fontSize = 36.sp
+        )
+
+        Text(
+            text = message,
+            fontSize = 100.sp,
+            lineHeight = 100.sp,
+            color = Color.Black
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun BirthdayCardPreview() {
     Happy_BirthdayTheme {
-        GreetingText(message = "Happy Birthday Sam!")
+        GreetingText(
+            message = "Happy Birthday Sam!",
+            from = "From Emma"
+        )
     }
 }
