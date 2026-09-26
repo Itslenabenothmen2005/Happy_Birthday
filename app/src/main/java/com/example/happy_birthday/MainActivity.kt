@@ -1,4 +1,3 @@
-// Fichier : MainActivity.kt
 package com.example.happy_birthday
 
 import android.os.Bundle
@@ -18,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.happy_birthday.ui.theme.Happy_BirthdayTheme
+import androidx.compose.foundation.layout.Box
 
 class MainActivity : ComponentActivity() {
 
@@ -31,21 +31,23 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
-
-                    Column(
+//pour les mettre en méme niveau
+                    Box(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
+                        contentAlignment = Alignment.Center
                     ) {
-
-                        Text(
-                            text = "BirthdayCardPreview",
-                            fontSize = 14.sp,
-                            color = Color.Gray
-                        )
-                        GreetingText(message = "Happy Birthday Sam!")
+                        Column(
+                            horizontalAlignment = Alignment.Start
+                        ) {
+                            Text(
+                                text = "BirthdayCardPreview",
+                                fontSize = 14.sp,
+                                color = Color.Gray
+                            )
+                            GreetingText(message = "Happy Birthday James!")
+                        }
                     }
                 }
             }
@@ -53,7 +55,14 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
+@Composable
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
+    Text(
+        text = message,
+        fontSize = 36.sp,
+        modifier = modifier
+    )
+}
 
 @Preview(showBackground = true)
 @Composable
@@ -61,12 +70,4 @@ fun BirthdayCardPreview() {
     Happy_BirthdayTheme {
         GreetingText(message = "Happy Birthday Sam!")
     }
-}
-
-@Composable
-fun GreetingText(message: String, modifier: Modifier = Modifier) {
-    Text(
-        text = message,
-        modifier = modifier
-    )
 }
