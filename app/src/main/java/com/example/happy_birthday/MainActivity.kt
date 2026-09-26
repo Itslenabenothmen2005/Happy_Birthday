@@ -18,6 +18,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.happy_birthday.ui.theme.Happy_BirthdayTheme
 import androidx.compose.foundation.layout.Row
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +44,7 @@ class MainActivity : ComponentActivity() {
                         Column(
                             horizontalAlignment = Alignment.Start
                         ) {
-                            Text(
-                                text = "BirthdayCardPreview",
-                                fontSize = 14.sp,
-                                color = Color.Gray
-                            )
+                            
                             GreetingText(message = "Happy Birthday Sam!", from = "From Emma")
                         }
                     }
@@ -56,16 +56,23 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
-    Row(modifier = modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+    )  {
         Text(
             text = message,
             fontSize = 100.sp,
             lineHeight = 116.sp,
+            textAlign = TextAlign.Center
         )
 
         Text(
             text = from,
-            fontSize = 36.sp
+            fontSize = 36.sp,
+            modifier = Modifier
+                .padding(16.dp)
+                .align(Alignment.End)
         )
     }
 }
