@@ -57,8 +57,9 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(message: String, modifier: Modifier = Modifier) {
     Text(
         text = message,
-        fontSize = 100.sp,
+        fontSize = 120.sp,
         lineHeight= 116.sp,
+        color= Color.White,
         modifier = modifier
     )
 }
